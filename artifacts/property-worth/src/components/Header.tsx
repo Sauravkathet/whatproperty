@@ -1,41 +1,39 @@
 import { Link, useLocation } from "wouter";
 import { useState } from "react";
-import { Menu, X, Home } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import logo from "@/assets/images/logo.png";
 
 export function Header() {
   const [location] = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { href: "/", label: "HOME" },
-    { href: "/get-appraisal", label: "GET APPRAISAL" },
+    { href: "/", label: "Home" },
+    { href: "/get-appraisal", label: "Get Appraisal" },
     { href: "/faq", label: "FAQ" },
-    { href: "/about", label: "ABOUT" },
-    { href: "/contact", label: "CONTACT" },
-    { href: "/for-agents", label: "FOR AGENTS" },
+    { href: "/about", label: "About" },
+    { href: "/contact", label: "Contact" },
+    { href: "/for-agents", label: "For Agents" },
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white shadow-sm">
-      <div className="mx-auto flex h-16 sm:h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link href="/" className="flex items-center gap-2 sm:gap-3 min-w-0">
-          <div className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded bg-brand-green text-white shrink-0">
-            <Home className="h-5 w-5 sm:h-6 sm:w-6" />
-          </div>
-          <div className="flex flex-col text-[11px] sm:text-sm font-bold leading-tight truncate">
-            <span className="text-gray-800">WHAT'S YOUR</span>
-            <span className="text-brand-green">PROPERTY WORTH?</span>
-          </div>
+    <header className="sticky top-0 z-50 w-full border-b border-[#efefef] bg-white/98 backdrop-blur-sm">
+      <div className="mx-auto flex max-w-[1540px] items-center justify-between gap-6 px-4 py-3 sm:px-6 lg:px-10 lg:py-4">
+        <Link href="/" className="flex min-w-0 items-center">
+          <img
+            src={logo}
+            alt="What's Your Property Worth"
+            className="h-12 w-auto sm:h-14 lg:h-[78px]"
+          />
         </Link>
 
-        {/* Desktop Nav (lg+) */}
-        <nav className="hidden items-center gap-5 xl:gap-8 lg:flex">
+        <nav className="hidden items-center gap-7 lg:flex xl:gap-10">
           {navLinks.map((link) => (
             <Link
               key={link.label}
               href={link.href}
-              className={`text-sm font-bold tracking-wide transition-colors hover:text-brand-teal whitespace-nowrap ${
-                location === link.href ? "text-brand-teal" : "text-gray-600"
+              className={`whitespace-nowrap text-[1rem] font-medium transition-colors duration-300 hover:text-brand-teal xl:text-[1.05rem] ${
+                location === link.href ? "text-brand-teal" : "text-[#111111]"
               }`}
             >
               {link.label}
@@ -43,26 +41,24 @@ export function Header() {
           ))}
         </nav>
 
-        {/* Mobile / Tablet Menu Toggle (<lg) */}
         <button
           aria-label="Toggle navigation"
-          className="p-2 text-gray-600 lg:hidden"
+          className="rounded-full p-2 text-[#111111] transition-colors hover:bg-black/5 lg:hidden"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
 
-      {/* Mobile / Tablet Nav (<lg) */}
       {isMobileMenuOpen && (
-        <nav className="absolute left-0 top-16 sm:top-20 w-full bg-white p-4 shadow-lg lg:hidden">
+        <nav className="border-t border-black/5 bg-white px-4 py-4 shadow-sm lg:hidden">
           <ul className="flex flex-col gap-4">
             {navLinks.map((link) => (
               <li key={link.label}>
                 <Link
                   href={link.href}
-                  className={`block text-sm font-bold tracking-wide transition-colors hover:text-brand-teal ${
-                    location === link.href ? "text-brand-teal" : "text-gray-600"
+                  className={`block text-base font-medium transition-colors hover:text-brand-teal ${
+                    location === link.href ? "text-brand-teal" : "text-[#111111]"
                   }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >

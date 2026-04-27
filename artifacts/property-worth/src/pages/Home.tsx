@@ -1,49 +1,44 @@
 import { Reveal } from "@/components/Reveal";
 import { DollarSign, HelpCircle, Lightbulb, Check } from "lucide-react";
-import heroHandsHouse from "@/assets/images/hero-hands-house.png";
+import heroPreview from "@/assets/images/preview.png";
 import { Link } from "wouter";
 
 export default function Home() {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-brand-green to-brand-dark-green">
-        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:items-center lg:gap-8 lg:px-8 lg:py-24">
-          <Reveal direction="left" className="max-w-xl text-white">
-            <h1 className="text-4xl font-extrabold uppercase leading-tight sm:text-5xl lg:text-6xl">
-              What's Your
+      <section className="relative overflow-hidden bg-[radial-gradient(circle_at_98%_74%,rgba(31,167,160,0.62)_0%,rgba(31,167,160,0.42)_10%,rgba(31,167,160,0.14)_20%,rgba(31,167,160,0)_30%),linear-gradient(90deg,#c6ec00_0%,#93d700_22%,#67c018_54%,#41b63d_78%,#38b94d_90%,#2ec5c9_100%)]">
+        <div className="mx-auto grid min-h-[470px] max-w-[1540px] gap-8 px-4 py-8 sm:px-6 sm:py-10 lg:min-h-[620px] lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:gap-0 lg:px-0">
+          <Reveal direction="left" className="relative z-10 max-w-[640px] text-black lg:ml-[72px] lg:mt-[-6px]">
+            <h1 className="text-[3rem] font-extralight leading-[0.98] tracking-[-0.05em] text-black sm:text-[4rem] lg:text-[4.6rem] xl:text-[4.9rem]">
+              What&apos;s Your
               <br />
-              Property
-              <br />
-              Worth?
+              Property Worth?
             </h1>
-            <p className="mt-6 max-w-md text-base leading-relaxed text-white/95">
+            <p className="mt-7 max-w-[660px] text-base leading-[1.5] text-black/90 sm:text-[1.05rem] lg:text-[1.1rem] xl:text-[1.14rem]">
               Hello and welcome to "What's Your Property Worth". Here, you can obtain a
               professional evaluation on your property. It takes only a couple of minutes
               and best of all, it's cost-free!
             </p>
-            <div className="mt-8 flex max-w-md items-stretch overflow-hidden rounded bg-white shadow-md">
+            <div className="mt-3 flex max-w-[450px] items-stretch overflow-hidden rounded-[4px] border border-[#cbcbcb] bg-white shadow-[0_1px_0_rgba(255,255,255,0.32)]">
               <input
                 type="text"
                 placeholder="ENTER YOUR POSTCODE"
-                className="w-full px-4 py-3 text-sm font-medium text-gray-700 placeholder-gray-400 outline-none"
+                className="w-full px-5 py-3 text-[0.98rem] font-medium uppercase tracking-[-0.02em] text-[#666666] placeholder:text-[#7b7b7b] outline-none sm:text-[1.02rem]"
               />
               <Link href="/get-appraisal">
-                <button className="h-full bg-gray-200 px-6 py-3 text-sm font-bold uppercase text-gray-700 transition-colors hover:bg-gray-300">
+                <button className="h-full border-l border-[#cbcbcb] bg-[#e8e8e8] px-7 py-3 text-[0.98rem] font-medium uppercase text-black transition-colors duration-300 hover:bg-[#dcdcdc] sm:text-[1.02rem]">
                   Go!
                 </button>
               </Link>
             </div>
           </Reveal>
 
-          <Reveal direction="right" className="relative h-[320px] sm:h-[420px] lg:h-[460px]">
-            <div className="absolute inset-0 overflow-hidden">
-              <div className="absolute -right-[20%] top-0 h-full w-[140%] -skew-x-12 transform bg-brand-teal" />
-            </div>
+          <Reveal direction="right" className="relative h-[300px] overflow-hidden sm:h-[400px] lg:h-[620px]">
             <img
-              src={heroHandsHouse}
-              alt="Hands holding a green house cutout with a family silhouette"
-              className="relative z-10 mx-auto h-full w-auto max-w-full object-contain"
+              src={heroPreview}
+              alt="Property worth hero preview"
+              className="absolute bottom-[-2px] right-[6px] z-10 h-[104%] w-auto max-w-none object-contain drop-shadow-[18px_0_22px_rgba(33,176,177,0.34)] sm:bottom-[-3px] sm:right-[10px] sm:h-[108%] lg:bottom-[-6px] lg:right-[14px] lg:h-[102%] xl:right-[18px]"
             />
           </Reveal>
         </div>
