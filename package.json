@@ -4,11 +4,19 @@
   "license": "MIT",
   "scripts": {
     "preinstall": "sh -c 'rm -f package-lock.json yarn.lock; case \"$npm_config_user_agent\" in pnpm/*) ;; *) echo \"Use pnpm instead\" >&2; exit 1 ;; esac'",
-    "build": "pnpm run typecheck && pnpm -r --if-present run build",
+    "dev": "corepack pnpm --filter @workspace/property-worth dev",
+    "build": "corepack pnpm --filter @workspace/property-worth build",
+    "preview": "corepack pnpm --filter @workspace/property-worth serve",
+    "typecheck": "corepack pnpm --filter @workspace/property-worth typecheck",
+    "build:all": "corepack pnpm run typecheck:all && corepack pnpm -r --if-present run build",
     "typecheck:libs": "tsc --build",
-    "typecheck": "pnpm run typecheck:libs && pnpm -r --filter \"./artifacts/**\" --filter \"./scripts\" --if-present run typecheck"
+    "typecheck:all": "corepack pnpm run typecheck:libs && corepack pnpm -r --filter \"./artifacts/**\" --filter \"./scripts\" --if-present run typecheck"
   },
   "private": true,
+  "packageManager": "pnpm@10.32.1",
+  "engines": {
+    "node": ">=20.19.0"
+  },
   "devDependencies": {
     "typescript": "~5.9.2",
     "prettier": "^3.8.1"
