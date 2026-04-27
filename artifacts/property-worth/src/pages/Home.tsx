@@ -8,19 +8,19 @@ export default function Home() {
     <div className="w-full">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-[radial-gradient(circle_at_98%_74%,rgba(31,167,160,0.62)_0%,rgba(31,167,160,0.42)_10%,rgba(31,167,160,0.14)_20%,rgba(31,167,160,0)_30%),linear-gradient(90deg,#c6ec00_0%,#93d700_22%,#67c018_54%,#41b63d_78%,#38b94d_90%,#2ec5c9_100%)]">
-        <div className="mx-auto grid min-h-[470px] max-w-[1540px] gap-8 px-4 py-8 sm:px-6 sm:py-10 lg:min-h-[620px] lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:gap-0 lg:px-0">
-          <Reveal direction="left" className="relative z-10 max-w-[640px] text-black lg:ml-[72px] lg:mt-[-6px]">
+        <div className="mx-auto grid min-h-117.5 max-w-385 gap-8 px-4 py-8 sm:px-6 sm:py-10 lg:min-h-155 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:gap-0 lg:px-0">
+          <Reveal direction="left" className="relative z-10 max-w-160 text-black lg:ml-18 lg:-mt-1.5">
             <h1 className="text-[3rem] font-extralight leading-[0.98] tracking-[-0.05em] text-black sm:text-[4rem] lg:text-[4.6rem] xl:text-[4.9rem]">
               What&apos;s Your
               <br />
               Property Worth?
             </h1>
-            <p className="mt-7 max-w-[660px] text-base leading-[1.5] text-black/90 sm:text-[1.05rem] lg:text-[1.1rem] xl:text-[1.14rem]">
+            <p className="mt-7 max-w-165 text-base leading-normal text-black/90 sm:text-[1.05rem] lg:text-[1.1rem] xl:text-[1.14rem]">
               Hello and welcome to "What's Your Property Worth". Here, you can obtain a
               professional evaluation on your property. It takes only a couple of minutes
               and best of all, it's cost-free!
             </p>
-            <div className="mt-3 flex max-w-[450px] items-stretch overflow-hidden rounded-[4px] border border-[#cbcbcb] bg-white shadow-[0_1px_0_rgba(255,255,255,0.32)]">
+            <div className="mt-3 flex max-w-112.5 items-stretch overflow-hidden rounded-lg border border-[#cbcbcb] bg-white shadow-[0_1px_0_rgba(255,255,255,0.32)]">
               <input
                 type="text"
                 placeholder="ENTER YOUR POSTCODE"
@@ -34,11 +34,11 @@ export default function Home() {
             </div>
           </Reveal>
 
-          <Reveal direction="right" className="relative h-[300px] overflow-hidden sm:h-[400px] lg:h-[620px]">
+          <Reveal direction="right" className="relative h-75 overflow-hidden sm:h-100 lg:h-155">
             <img
               src={heroPreview}
               alt="Property worth hero preview"
-              className="absolute bottom-[-2px] right-[6px] z-10 h-[104%] w-auto max-w-none object-contain drop-shadow-[18px_0_22px_rgba(33,176,177,0.34)] sm:bottom-[-3px] sm:right-[10px] sm:h-[108%] lg:bottom-[-6px] lg:right-[14px] lg:h-[102%] xl:right-[18px]"
+              className="absolute -bottom-0.5 right-1.5 z-10 h-[104%] w-auto max-w-none object-contain drop-shadow-[18px_0_22px_rgba(33,176,177,0.34)] sm:-bottom-0.75 sm:right-2.5 sm:h-[108%] lg:-bottom-1.5 lg:right-3.5 lg:h-[102%] xl:right-4.5"
             />
           </Reveal>
         </div>
